@@ -1,0 +1,23 @@
+%p#notice= notice
+
+%h2
+  .btn
+    = link_to 'Push to opencrx', court_opencrx_index_path(@court), method: :post
+
+%p
+  %b Category:
+  = @court.category
+%p
+  %b State:
+  = @court.state
+%p
+  %b Name:
+  = @court.name
+%p
+  %b Blob:
+  = raw ap @court.blob
+
+= link_to 'Edit', edit_court_path(@court)
+\|
+= link_to 'Back', courts_path
+

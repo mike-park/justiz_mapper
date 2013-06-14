@@ -1,0 +1,37 @@
+%h1 Listing courts
+%h2
+  .btn
+    = link_to 'Reload from Justiz', justiz_index_path, method: :post
+
+
+%table.table
+  %tr
+    %th State
+    %th Name
+    %th Location
+    %th Phone / Email
+    %th Opencrx
+    %th
+    %th
+    %th
+
+  - @courts.each do |court|
+    %tr
+      %td
+        = court.state
+        %br
+        = court.category
+      %td= court.name
+      %td= court.blob[:justiz][:location]
+      %td
+        = court.blob[:justiz][:phone]
+        %br
+        = court.blob[:justiz][:email]
+      %td= court.blob[:opencrx].present?
+      %td= link_to 'Show', court
+      %td= link_to 'Edit', edit_court_path(court)
+      %td= link_to 'Destroy', court, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Court', new_court_path
