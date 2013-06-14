@@ -5,7 +5,6 @@ gem 'rails', '3.2.13'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
 gem "haml", ">= 3.1.7"
 gem "bootstrap-sass", ">= 2.2.2.0"
 gem 'simple_form'
@@ -13,6 +12,7 @@ gem 'inherited_resources'
 gem 'justiz'
 gem 'opencrx'
 gem 'newrelic_rpm', '~> 3.5.5.38'
+gem 'awesome_print'
 
 
 # Gems used only for assets and not required
@@ -30,6 +30,7 @@ end
 gem 'jquery-rails'
 
 group :development, :test do
+  gem 'sqlite3'
   gem 'rspec-rails'
 end
 
@@ -38,7 +39,6 @@ group :development do
   gem "binding_of_caller", ">= 0.6.8"
   gem "quiet_assets"
   gem 'haml-rails'
-  gem 'awesome_print'
 end
 
 group :production do
