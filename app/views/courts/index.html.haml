@@ -17,10 +17,7 @@
 
   - @courts.each do |court|
     %tr
-      %td
-        = court.state
-        %br
-        = court.category
+      %td= court.state
       %td= court.name
       %td= court.blob[:justiz][:location]
       %td
