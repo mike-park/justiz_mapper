@@ -79,6 +79,9 @@ GEM
     justiz (0.0.1)
       mechanize
       thor
+    kaminari (0.14.1)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -187,9 +190,11 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   haml (>= 3.1.7)
   haml-rails
+  has_scope
   inherited_resources
   jquery-rails
   justiz
+  kaminari
   newrelic_rpm (~> 3.5.5.38)
   opencrx
   pg
