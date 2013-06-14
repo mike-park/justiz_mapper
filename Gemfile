@@ -12,6 +12,7 @@ gem 'simple_form'
 gem 'inherited_resources'
 gem 'justiz'
 gem 'opencrx'
+gem 'newrelic_rpm', '~> 3.5.5.38'
 
 
 # Gems used only for assets and not required
