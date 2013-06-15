@@ -18,7 +18,7 @@ class JustizController < InheritedResources::Base
   
   def scrape(category, state)
       puts "Scraping #{state} #{category}"
-      scraper.scrape(category), state).uniq.map do |contact|
+      scraper.scrape(category, state).uniq.map do |contact|
         hash = {}.merge contact
         {state: states[state], name: hash[:court], blob: {justiz: hash}}
       end    
