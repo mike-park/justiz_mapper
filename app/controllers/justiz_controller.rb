@@ -6,21 +6,21 @@ class JustizController < InheritedResources::Base
     states = scraper.states
     types = scraper.court_types
     count = 0
-    new_records = []
-    states.keys.each do |state|
-      next if state == 'ALL'
-      type = 'ALL'
-      puts "Scraping #{state} #{type}"
-      scraper.scrape(type, state).uniq.each do |contact|
-        hash = {}.merge contact
-        new_records.push({state: states[state], name: hash[:court], blob: {justiz: hash}})
-        count += 1
-      end
-    end
-    puts "Saving records #{count}"
+    new_records = scrape('ALL', 'NRW')
+    puts "Saving records #{new_records.length}"
     new_records.each do |record|
       Court.create!(record)
     end
     redirect_to courts_path, notice: "#{count} entries downloaded"
+  end
+  
+  private
+  
+  def scrape(category, state)
+      puts "Scraping #{state} #{category}"
+      scraper.scrape(category), state).uniq.map do |contact|
+        hash = {}.merge contact
+        {state: states[state], name: hash[:court], blob: {justiz: hash}}
+      end    
   end
 end
