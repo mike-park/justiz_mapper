@@ -15,6 +15,7 @@ gem 'newrelic_rpm', '~> 3.5.5.38'
 gem 'awesome_print'
 gem 'kaminari'
 gem 'has_scope'
+gem 'ransack'
 
 # Gems used only for assets and not required
 # in production environments by default.

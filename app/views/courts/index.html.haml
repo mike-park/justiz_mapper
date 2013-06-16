@@ -4,6 +4,12 @@
     = link_to 'Reload from Justiz', justiz_index_path, method: :post
 
 
+= search_form_for @q do |f|
+  = f.collection_select(:state_eq, Court.select([:state]).group(:state), :state, :state, :prompt => 'State is')
+  = f.label :name_cont
+  = f.text_field :name_cont
+
+
 %table.table
   %tr
     %th State
